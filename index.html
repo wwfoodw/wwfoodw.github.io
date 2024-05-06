@@ -1,63 +1,84 @@
-<!DOCTYPE html>
-<!--
-	NOTES:
-	1. All tokens are represented by '$' sign in the template.
-	2. You can write your code only wherever mentioned.
-	3. All occurrences of existing tokens will be replaced by their appropriate values.
-	4. Blank lines will be removed automatically.
-	5. Remove unnecessary comments before creating your template.
--->
+<!doctype html>
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="authoring-tool" content="Adobe_Animate_CC">
 <title>index</title>
-<!-- write your code here -->
-<style>
-  #animation_container {
-	position:absolute;
-	margin:auto;
-	left:0;right:0;
-	top:0;bottom:0;
-  }
-</style>
-<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
-<script src="index.js"></script>
-<script>
-var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
-function init() {
-	canvas = document.getElementById("canvas");
-	anim_container = document.getElementById("animation_container");
-	dom_overlay_container = document.getElementById("dom_overlay_container");
-	var comp=AdobeAn.getComposition("7532B7E235C3413993BC2121F1AF7E4D");
-	var lib=comp.getLibrary();
-	handleComplete({},comp);
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
 }
-function handleComplete(evt,comp) {
-	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-	var lib=comp.getLibrary();
-	var ss=comp.getSpriteSheet();
-	exportRoot = new lib._HTML5Canvas();
-	stage = new lib.Stage(canvas);	
-	//Registers the "tick" event listener.
-	fnStartAnimation = function() {
-		stage.addChild(exportRoot);
-		createjs.Ticker.framerate = lib.properties.fps;
-		createjs.Ticker.addEventListener("tick", stage);
-	}	    
-	//Code to support hidpi screens and responsive scaling.
-	AdobeAn.makeResponsive(true,'both',false,1,[canvas,anim_container,dom_overlay_container]);	
-	AdobeAn.compositionLoaded(lib.properties.id);
-	fnStartAnimation();
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
 }
 </script>
-<!-- write your code here -->
 </head>
-<body onload="init();" style="margin:0px;">
-	<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1280px; height:720px">
-		<canvas id="canvas" width="1280" height="720" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
-		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1280px; height:720px; position: absolute; left: 0px; top: 0px; display: block;">
-		</div>
+
+<body onLoad="MM_preloadImages('media/phyllosoma_hover.svg','media/phyllosphere_hover.svg','media/jellies_hover.svg','media/culturing_animals_hover.svg','media/methods_hover.svg','media/publications_hover.svg')">
+<div class="container">
+
+<img src="images/header.svg" alt=""/>
+<div class="container">
+
+	<div class="container">
+    	<div class="image-left-medium", style="margin-bottom: 10px;">
+        	<img src="images/me.jpg" alt="Descriptive text about the image">
+    </div>
+    	<p style="font-size: 26px;"> I'm Richard O'Rorke, a food-web ecologist with a focus on tackling problems in conservation. This involves looking at diverse feeding interactions: from microbes (bacteria, phage, fungi, unicellular and colonial Eukaryotes) to multicellular plants and animals. Understanding the structure of food webs helps us understand how some species succeed others, why species become invasive and help us rescue threatened ecosystems and landscapes.</p>
 	</div>
+	
+	
+	<p></p>
+	
+	<a href="phyllosoma.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('lobster','','media/phyllosoma_hover.svg',1)"><img id="lobster" src="media/phyllosoma_off-01.svg" alt=""></a> 
+	
+	<a href="phyllosphere.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('snail','','media/phyllosphere_hover-01.svg',1)"><img id="snail" src="media/phyllosphere_off-01.svg" alt=""></a>
+
+	
+	<a href="methods.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('methods','','media/methods_hover.svg',1)"><img id="methods" src="media/methods_off.svg" alt=""></a> 
+
+	
+	<a href="culturing_animals.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('culturing_animals','','media/culturing_animals_hover.svg',1)"><img id="culturing_animals" src="media/culturing_animals_off.svg" alt=""></a> 
+	
+	<a href="jellies.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('jellies','','media/jellies_hover.svg',1)"><img id="jellies" src="media/jellies_off-01.svg" alt=""></a> 
+	
+	
+	<a href="publications.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('publications','','media/publications_hover.svg',1)"><img id="publications" src="media/publications_off.svg" alt=""></a> 
+	
+	
+<table width="900" 
+	   border="0"
+	   cellpadding="10">
+  <tbody>
+    <tr>
+
+      <th scope="col"><a href="phyllosoma.html">Phyllosoma</a></th>
+      <th scope="col"><a href="phyllosphere.html">Phyllosphere</a></th>
+      <th scope="col"><a href="culturing_animals.html">Culturing</a></th>
+      <th scope="col"><a href="jellies.html">Jellies</a></th>
+      <th scope="col"><a href="methods.html">Molecular Methods</a></th>
+      <th scope="col"><a href="publications.html">Publications</a></th>
+    </tr>
+  </tbody>
+</table>
+		
+	
+</div>
+
 </body>
 </html>
